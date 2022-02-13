@@ -16,8 +16,10 @@ export class AuthService {
   constructor(private client: HttpClient) { }
 
   register(data: RegisterRequestInterface) : Observable<CurrentUser>{
+      console.log("service data",data);
+      console.log("service url", this.url);
       return this.client.post<AuthResponseInterface>(this.url,data).pipe(map(
-        (response: AuthResponseInterface)=> response.user
+        (response: AuthResponseInterface)=> response.user,
       ))
   }
 }
