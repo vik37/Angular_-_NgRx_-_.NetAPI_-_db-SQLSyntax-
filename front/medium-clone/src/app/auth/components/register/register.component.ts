@@ -5,8 +5,9 @@ import { Observable } from 'rxjs';
 
 import { registerAction } from 'src/app/auth/store/actions/register.actions';
 import { AuthService } from 'src/app/auth/services/auth.service';
-import { isSubmittingSelector } from 'src/app/auth/store/selectors';
+import { isSubmittingSelector, validationErrorsSelector } from 'src/app/auth/store/selectors';
 import { RegisterRequestInterface } from 'src/app/shared/types/register.interface';
+import { BackendErrors } from 'src/app/shared/types/backendErrors.interface';
 
 @Component({
   selector: 'app-register',
@@ -15,6 +16,7 @@ import { RegisterRequestInterface } from 'src/app/shared/types/register.interfac
 export class RegisterComponent implements OnInit {
 
   isSubmitting$: Observable<boolean>;
+  backendErrors$: Observable<BackendErrors | null>
   form: FormGroup;
   constructor(private fb: FormBuilder, private store: Store,
               private authService: AuthService) { }
@@ -26,6 +28,7 @@ export class RegisterComponent implements OnInit {
   initializeValues():void{
     this.isSubmitting$ = this.store.pipe(select(isSubmittingSelector));
     console.log('isSubmitting$',this.isSubmitting$)
+    this.backendErrors$ = this.store.pipe(select(validationErrorsSelector))
   }
   initializeForm():void{
     console.log('initialize form');

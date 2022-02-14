@@ -1,13 +1,16 @@
 
 <div class="auth-page">
   <div class="container">
-    ==={{isSubmitting$! | async}}===
     <div class="row">
       <div class="col-md-6 offset-md-3 col-xs-12 register_page">
         <h1 class="text-md-center text-xs-center">Sign Up</h1>
         <p class="text-md-center text-xs-center">
           <a [routerLink]="['/login']">Have an Account?</a>
         </p>
+        <app-backend-error-messages
+          *ngIf="backendErrors$ | async"
+          [backendErrors]="backendErrors$ | async"
+        ></app-backend-error-messages>
         <form [formGroup]="form" (ngSubmit)="onSubmit()">
           <fieldset>
             <fieldset class="form-group">
@@ -33,6 +36,7 @@
             </fieldset>
             <div class="col-md-3 offset-md-8 register-btn">
               <button type="submit" class="btn btn-outline-danger"
+                      [disabled]="isSubmitting$ | async"
                       >Sign Up</button>
             </div>
           </fieldset>
