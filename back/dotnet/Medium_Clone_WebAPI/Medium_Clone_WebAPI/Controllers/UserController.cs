@@ -50,13 +50,12 @@ namespace Medium_Clone_WebAPI.Controllers
         }
 
         [HttpPost]
-        public ActionResult Post(RegisterDto register)
+        public ActionResult Post([FromBody] RegisterDto register)
         {
             try
             {
-                _currentUserService.RegisterNewUSer(register);
-                var user = _currentUserService.GetAll().LastOrDefault();
-                return Created($"~api/employees/{user.Id}", user);
+                var user = _currentUserService.RegisterNewUSer(register);
+                return Created($"api/user/{user.Id}", user);
             }
             catch (Exception ex)
             {

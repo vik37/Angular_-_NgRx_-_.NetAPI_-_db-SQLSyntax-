@@ -10,6 +10,6 @@ namespace Medium_Clone_WebAPI.Services.interfaces
     {
         IEnumerable<CurentUserDto> GetAll();
         CurentUserDto GetById(int id);
-        void RegisterNewUSer(RegisterDto register);
+        CurentUserDto RegisterNewUSer(RegisterDto register);
     }
 }

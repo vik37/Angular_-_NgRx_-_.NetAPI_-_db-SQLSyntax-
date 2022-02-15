@@ -12,7 +12,7 @@ using Dapper.Contrib.Extensions;
 
 namespace Medium_Clone_WebAPI.DataAccess.Repositories
 {
-    public class CurrentUserRepo : IRepository<CurentUser>
+    public class UserRepo : IRepository<CurentUser>
     {
         public IEnumerable<CurentUser> GetAll()
         {
@@ -37,6 +37,17 @@ namespace Medium_Clone_WebAPI.DataAccess.Repositories
             {
                 connection.Open();
                 user = connection.QuerySingleOrDefault<CurentUser>("SelectCurentUserById", new { Id = id }, commandType: CommandType.StoredProcedure);
+                connection.Close();
+            }
+            return user;
+        }
+        public CurentUser GetByUsername(string username)
+        {
+            var user = new CurentUser();
+            using(var connection = new SqlConnection(ConnectionString.MCDbConnectionString))
+            {
+                connection.Open();
+                user = connection.QuerySingleOrDefault<CurentUser>("SelectCurentUserByUsername", new { username = username }, commandType: CommandType.StoredProcedure);
                 connection.Close();
             }
             return user;

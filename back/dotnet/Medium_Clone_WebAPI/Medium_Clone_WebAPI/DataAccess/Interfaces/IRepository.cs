@@ -11,5 +11,6 @@ namespace Medium_Clone_WebAPI.DataAccess.Interfaces
         IEnumerable<CurentUser> GetAll();
         CurentUser GetById(int id);
         void Add(CurentUser user);
+        CurentUser GetByUsername(string username);
     }
 }

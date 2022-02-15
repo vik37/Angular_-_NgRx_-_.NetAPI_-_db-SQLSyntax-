@@ -1,9 +1,0 @@
-C:\Users\vikto\source\repos\Medium_Clone_WebAPI\Entities\bin\Debug\netcoreapp3.1\Entities.deps.json
-C:\Users\vikto\source\repos\Medium_Clone_WebAPI\Entities\bin\Debug\netcoreapp3.1\Entities.dll
-C:\Users\vikto\source\repos\Medium_Clone_WebAPI\Entities\bin\Debug\netcoreapp3.1\Entities.pdb
-C:\Users\vikto\source\repos\Medium_Clone_WebAPI\Entities\obj\Debug\netcoreapp3.1\Entities.GeneratedMSBuildEditorConfig.editorconfig
-C:\Users\vikto\source\repos\Medium_Clone_WebAPI\Entities\obj\Debug\netcoreapp3.1\Entities.AssemblyInfoInputs.cache
-C:\Users\vikto\source\repos\Medium_Clone_WebAPI\Entities\obj\Debug\netcoreapp3.1\Entities.AssemblyInfo.cs
-C:\Users\vikto\source\repos\Medium_Clone_WebAPI\Entities\obj\Debug\netcoreapp3.1\Entities.csproj.CoreCompileInputs.cache
-C:\Users\vikto\source\repos\Medium_Clone_WebAPI\Entities\obj\Debug\netcoreapp3.1\Entities.dll
-C:\Users\vikto\source\repos\Medium_Clone_WebAPI\Entities\obj\Debug\netcoreapp3.1\Entities.pdb
